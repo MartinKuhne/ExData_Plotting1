@@ -10,7 +10,6 @@ library("lubridate")
 # getEnergyData - return a tidyed subset of the energy data
 getEnergyData <- function ()
 {
-    
     setwd("~/datascience/4.exploratory/ExData_Plotting1")
     
     # force reading columns as "character" as fread will promote to character
@@ -38,4 +37,9 @@ getEnergyData <- function ()
     tidy <- mutate(tidy, SubMetering1 = as.numeric(Sub_metering_1))
     tidy <- mutate(tidy, SubMetering2 = as.numeric(Sub_metering_2))
     tidy <- mutate(tidy, SubMetering3 = as.numeric(Sub_metering_3))
+    
+    # convert date and time from string to date format
+    tidy <- mutate(tidy, dateTime = 
+                   parse_date_time(paste(Date, Time, sep = " "), "%d%m%y %H%M%S"))
+    tidy
 }
