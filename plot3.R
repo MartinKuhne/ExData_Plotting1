@@ -17,7 +17,7 @@ plot3 <- function()
         lines(dateTime, SubMetering2, col="red")
         lines(dateTime, SubMetering3, col="blue")
         legend("topright", lty=1,
-               c("Sub_metering_1", "Sub_metering_2", "Sub_metering_2"),
+               c("Sub_metering_1", "Sub_metering_2", "Sub_metering_3"),
                col=c("black", "red", "blue"))
     })
 }
