@@ -13,6 +13,8 @@ data <- mutate(data, dateTime = parse_date_time(paste(Date, Time, sep = " "), "%
 
 png(file = "plot2.png")
 
+# creating a type "n" plot does not plot data initially
+# then draw the lines we need to imitate the reference plot
 with(data, 
  {
      plot(dateTime, GlobalActivePower, type="n", 
